@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Interface - Car Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="client.html">Client</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+  <!-- Client Interface -->
+  <section id="client">
+    <h1>Client Interface</h1>
+
+    <!-- View Available Cars -->
+    <div class="card">
+      <h2>Available Cars</h2>
+      <div class="filter-section">
+        <input type="text" id="filter-make" placeholder="Filter by make">
+        <input type="text" id="filter-model" placeholder="Filter by model">
+        <input type="number" id="filter-price" placeholder="Max price">
+        <button onclick="filterCars()">Apply Filters</button>
+      </div>
+      <ul id="car-list"></ul>
+    </div>
+
+    <!-- Book a Car -->
+    <div class="card">
+      <h2>Book a Car</h2>
+      <form id="booking-form">
+        <select id="car-select"></select>
+        <input type="date" id="start-date" required>
+        <input type="date" id="end-date" required>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+
+    <!-- View Booking History -->
+    <div class="card">
+      <h2>Booking History</h2>
+      <ul id="booking-history"></ul>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

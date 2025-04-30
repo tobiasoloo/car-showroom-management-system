@@ -1,0 +1,223 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <a href="client.html">Client</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+ 
+  <!-- Client Interface -->
+ <!-- <section id="client">
+    <h1>Client Interface</h1>
+
+    <!-- View Available Cars -->
+  <!--  <div>
+      <h2>Available Cars</h2>
+      <div>
+        <input type="text" id="filter-make" placeholder="Filter by make">
+        <input type="text" id="filter-model" placeholder="Filter by model">
+        <input type="number" id="filter-price" placeholder="Max price">
+        <button onclick="filterCars()">Apply Filters</button>
+      </div>
+      <ul id="car-list"></ul>
+    </div>
+
+    <!-- Book a Car -->
+  <!--  <div>
+      <h2>Book a Car</h2>
+      <form id="booking-form">
+        <select id="car-select"></select>
+        <input type="date" id="start-date" required>
+        <input type="date" id="end-date" required>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+
+    <!-- View Booking History -->
+  <!--  <div>
+      <h2>Booking History</h2>
+      <ul id="booking-history"></ul>
+    </div>
+  </section>
+
+
+  <!-- Admin Interface -->
+ <!-- <section id="admin">
+    <h1>Admin Interface</h1>
+
+    <!-- Add/Remove Cars -->
+  <!-- <div>
+      <h2>Manage Cars</h2>
+      <form id="car-form">
+        <input type="text" id="car-make" placeholder="Make" required>
+        <input type="text" id="car-model" placeholder="Model" required>
+        <input type="number" id="car-year" placeholder="Year" required>
+        <input type="text" id="car-license" placeholder="License Plate" required>
+        <input type="number" id="car-rate" placeholder="Daily Rate" required>
+        <button type="submit">Add Car</button>
+      </form>
+      <ul id="admin-car-list"></ul>
+    </div>
+
+    <!-- View All Bookings -->
+   <!-- <div>
+      <h2>All Bookings</h2>
+      <ul id="admin-booking-list"></ul>
+    </div>
+  </section> 
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Management System</title>
+  <link rel="stylesheet" href="stylesz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-car"></i>
+        <span>Kipuku</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#cars">Our Fleet</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="client.html" class="btn admin-btn">Client Portal</a></li>
+        <li><a href="admin.html" class="btn admin-btn">Admin Portal</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Premium Car Rental Management</h1>
+      <p>Streamline your car rental business with our powerful management system</p>
+      <div class="cta-buttons">
+        <a href="signup.html" class="btn primary-btn">Sign Up Now</a>
+        <a href="demo.html" class="btn secondary-btn">Request Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="features" class="features">
+      <h2>Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-calendar-check"></i>
+          <h3>Easy Booking</h3>
+          <p>Clients can book cars online with just a few clicks.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-car-alt"></i>
+          <h3>Fleet Management</h3>
+          <p>Track and manage your entire vehicle fleet in one place.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Real-time Analytics</h3>
+          <p>Get insights into your business performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cars" class="featured-cars">
+      <h2>Featured Vehicles</h2>
+      <div class="cars-grid" id="featured-cars-list">
+        <!-- Cars will be loaded dynamically from JavaScript -->
+      </div>
+      <a href="client.html" class="btn primary-btn">View All Cars</a>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-content">
+        <h2>About Our System</h2>
+        <p>Our Car Rental Management System is designed to simplify operations for both rental companies and their customers. With intuitive interfaces and powerful backend tools, we help you manage bookings, vehicles, and customers efficiently.</p>
+        <div class="stats">
+          <div class="stat">
+            <span class="number" id="cars-count">0</span>
+            <span class="label">Vehicles</span>
+          </div>
+          <div class="stat">
+            <span class="number" id="bookings-count">0</span>
+            <span class="label">Bookings</span>
+          </div>
+          <div class="stat">
+            <span class="number" id="users-count">0</span>
+            <span class="label">Happy Clients</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Car rental system">
+      </div>
+    </section>
+
+    <section id="demo" class="demo">
+      <h2>Ready to Get Started?</h2>
+      <p>Join hundreds of car rental businesses using our system</p>
+    <!--  <div class="demo-buttons">
+        <a href="signup.html" class="btn primary-btn">Sign Up Free</a>
+        <a href="#" class="btn secondary-btn">Schedule Demo</a>
+      </div>
+      -->
+
+      <!-- HTML -->
+<div class="cta-buttons">
+  <a href="signup.html" class="btn primary-btn">
+    <span>Sign Up Now</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <a href="demo.html" class="btn secondary-btn">
+    <span>Request Demo</span>
+    <i class="fas fa-play-circle"></i>
+  </a>
+</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Kipuku</h3>
+        <p>Premium car rental management solutions for businesses of all sizes.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="client.html">Client Portal</a></li>
+          <li><a href="admin.html">Admin Portal</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> tobiasoloo43@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +254 795384371</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kipuku. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scriptz.js"></script>
+</body>
+</html>
